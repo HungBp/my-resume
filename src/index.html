@@ -6,16 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hung's Resume</title>
-  <!-- include CSS & JS -->
+  <!-- include CSS -->
   <link rel="stylesheet" href="stylesheet/main.css">
   <link rel="stylesheet" href="stylesheet/resume.css">
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/src/assets/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/src/assets/favicon_io/favicon-16x16.png">
+  <!-- include JS -->
   <script src="script/resume.js" defer></script>
-  <!-- icon at at fontawesome.com -->
-  <!-- <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script> -->
 </head>
 
-<body>
-  <div class="resume resume--RWD-800px">
+<body class="disable-scrollbar">
+  <div class="pages resume resume--RWD-800px" id="resumeid">
     <div class="resume__left-side resume--text-white">
       <!-- information section -->
       <div class="section">
@@ -25,7 +28,7 @@
         <h1 class="section__head1 resume--text-center">BUI PHI HUNG</h1>
         <h2 class="section__head2 resume--text-center">FRONT-END WEB DEVELOPER</h2>
         <!-- pop-up -->
-        <div class="pop-up">
+        <div class="pop-up disable-text-selection .disable-scroll">
           <div class="pop-up__frame">
             <div class="pop-up__view">
               <div class="pop-up__view__control-btn pop-up__view__control-btn--prev">
@@ -36,7 +39,7 @@
                 &gt; <!-- forward button -->                
               </div>
               <div class="pop-up__view__control-btn pop-up__view__control-btn--close">
-                x    <!--  close button -->
+                &#128473; <!--  close button -->
               </div>
             </div>
             <div class="pop-up__selection">
@@ -63,10 +66,15 @@
       <div class="section">
         <h1 class="section__head1">PROJECTS</h1>
         <ul>
-          <li class="section__list section__list--type-none">a</li>
-          <li class="section__list section__list--type-none">b</li>
-          <li class="section__list section__list--type-none">c</li>
-          <li class="section__list section__list--type-none">d</li>
+          <li class="section__list section__list--type-none">
+            <a class="section__list--anchor" href="https://hung-bui-95.netlify.app/" target="_blank">My Resume - HTML, CSS, JS</a>
+          </li>
+          <li class="section__list section__list--type-none">
+            <a class="section__list--anchor" href="">Newspaper - Bootstrap</a>
+          </li>
+          <li class="section__list section__list--type-none">
+            <a class="section__list--anchor" href="">e-Commerce - ReactJS</a>
+          </li>
         </ul>
       </div>
       <!-- references section -->
@@ -125,8 +133,9 @@
       <div class="section section--top-margin-0 knowledge-right-side">
         <ul>
           <li class="section__list section__list--type-square">HTML, CSS, JS</li>
-          <li class="section__list section__list--type-square">ReactJS, SASS, Bootstrap</li>
-          <li class="section__list section__list--type-square">C, C++, C#</li>
+          <li class="section__list section__list--type-square">ReactJS, SASS, Bootstrap, jQuery</li>
+          <li class="section__list section__list--type-square">Git, GitHub</li>
+          <li class="section__list section__list--type-square">C, C#</li>
         </ul>
       </div>
       <!-- section education -->
@@ -160,6 +169,120 @@
         </ul>
         </p>
       </div>
+    </div>
+  </div>
+  <div class="pages interest disable-text-selection" id="interestid">
+    <!-- icon -->
+    <div class="interest__icon">
+      &#127992;
+    </div>
+    <div class="interest__icon">
+      <img src="assets/Manchester-United-icon.svg" class="interest__icon__img" alt="Manchester United">
+    </div>
+    <div class="interest__icon">
+      &#127911;
+    </div>
+    
+    <!-- pop-up -->
+    <div class="pop-up disable-text-selection">
+      <!-- interest 1 -->
+      <div class="pop-up__frame">
+        <div class="pop-up__view">
+          <div class="pop-up__view__control-btn pop-up__view__control-btn--close">
+            &#128473; <!--  close button -->
+          </div>
+        </div>
+      </div>
+      <!-- interest 2 -->
+      <div class="pop-up__frame">
+        <div class="pop-up__view__control-btn pop-up__view__control-btn--close">
+          &#128473; <!--  close button -->
+        </div>
+        <div class="interest2__description interest2__description--RWD-800px">
+          <p>
+            Manchester United are one of the most successful clubs in world football, with a glittering history of success on the field.
+          </p>
+        </div>
+        <div class="interest2__gallery">
+          <div class="interest2__gallery__cover interest2__gallery__cover--RWD-800px">
+            <img class="interest2__gallery__cover__img" src="assets/mu/image-1.png">
+          </div>
+          <div class="interest2__gallery__cover interest2__gallery__cover--RWD-800px">
+            <img class="interest2__gallery__cover__img" src="assets/mu/image-2.webp">
+          </div>
+          <div class="interest2__gallery__cover interest2__gallery__cover--RWD-800px">
+            <img class="interest2__gallery__cover__img" src="assets/mu/image-3.jpg">
+          </div>
+          <div class="interest2__gallery__cover interest2__gallery__cover--RWD-800px">
+            <img class="interest2__gallery__cover__img" src="assets/mu/image-4.jfif">
+          </div>
+          <div class="interest2__gallery__cover interest2__gallery__cover--RWD-800px">
+            <img class="interest2__gallery__cover__img" src="assets/mu/image-5.jpg">
+          </div>
+          <div class="interest2__gallery__cover interest2__gallery__cover--RWD-800px">
+            <img class="interest2__gallery__cover__img" src="assets/mu/image-6.jpg">
+          </div>
+          <div class="interest2__gallery__cover interest2__gallery__cover--RWD-800px">
+            <img class="interest2__gallery__cover__img" src="assets/mu/image-7.jpg">
+          </div>
+          <div class="interest2__gallery__cover interest2__gallery__cover--RWD-800px">
+            <img class="interest2__gallery__cover__img" src="assets/mu/image-8.jpg">
+          </div>
+          <div class="interest2__gallery__cover interest2__gallery__cover--RWD-800px">
+            <img class="interest2__gallery__cover__img" src="assets/mu/image-9.jfif">
+          </div>
+          <div class="interest2__gallery__cover interest2__gallery__cover--RWD-800px">
+            <img class="interest2__gallery__cover__img" src="assets/mu/image-10.webp">
+          </div>
+        </div>
+      </div>
+      <!-- interest 3 -->
+      <div class="pop-up__frame">
+        <div class="pop-up__view__control-btn pop-up__view__control-btn--close">
+          &#128473; <!--  close button -->
+        </div>
+        <div class="interest3__ytb">
+          <div class="pop-up__view__control-btn pop-up__view__control-btn--prev">
+            &lt; <!-- previous button -->
+          </div>
+          <div class="interest3__ytb__videos">
+            <p class="interest3__ytb__videos__no"><span>1</span> of 5</p>
+            <iframe class="interest3__ytb__videos__frame" src="" frameborder="0"></iframe>
+          </div>
+          <div class="pop-up__view__control-btn pop-up__view__control-btn--forw">
+            &gt; <!-- forward button -->                
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pages contact" id="contactid">
+    <div class="contact__text">
+      <h1>CONTACT</h1>
+    </div>
+    <div class="contact__frame">
+      <p class="contact__frame__text">Name</p>
+      <p class="contact__frame__text contact__frame__text--right">Bui Phi Hung</p>
+      <p class="contact__frame__text">Phone</p>
+      <p class="contact__frame__text contact__frame__text--right">093 770 1995</p>
+      <p class="contact__frame__text">Email</p>
+      <p class="contact__frame__text contact__frame__text--right">hungbp061195@gmail.com</p>
+    </div>
+  </div>
+  <div class="navigator disable-text-selection">
+    <div class="navigator__icon">&#9776;</div>
+    <div class="navigator__menu">
+      <ul>
+        <li class="navigator__menu__text">
+          <a class="navigator__menu__text--anchor" href="#resumeid">Resume</a>
+        </li>
+        <li class="navigator__menu__text">
+          <a class="navigator__menu__text--anchor" href="#interestid">Interests</a>
+        </li>
+        <li class="navigator__menu__text">
+          <a class="navigator__menu__text--anchor" href="#contactid">Contact</a>
+        </li>
+      </ul>
     </div>
   </div>
 </body>
