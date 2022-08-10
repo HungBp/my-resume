@@ -380,9 +380,21 @@
   .interest2__gallery__cover--RWD-800px {
     max-width: 90%;
   }
+  
   .interest2__description--RWD-800px {
     font-size: 1.7rem;
     margin-top: 2rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .interest2__gallery--RWD-500px {
+    height: 73%;
+  }
+  
+  .interest2__description--RWD-500px {
+    max-height: 20%;
+    margin-bottom: 1rem;
   }
 }
 
