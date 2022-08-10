@@ -2,13 +2,27 @@
 {
   const container = document.querySelector(".resume .pop-up");
   const popup = document.querySelector(".resume .pop-up__frame");
+  let closePopupRef;
+  let dotTimer;
+
   document.querySelector(".section__img-cover").addEventListener("click", () => {
-    popupVisibleAnimation(container, popup)
+    clearInterval(dotTimer);
+    sessionStorage.setItem("dot", "dotTimer");
+    document.querySelector(".section__img-cover__dot").style.opacity = "";
+    popupVisibleAnimation(container, popup);
   });
 
   document.querySelector(".resume .pop-up__view__control-btn--close").addEventListener("click", () => {
-    popupHiddenAnimation(container, popup)
+    popupHiddenAnimation(container, popup);
   });
+  
+  // dot effect
+  if (!sessionStorage.getItem("dot")) {
+    dotTimer = setInterval(() => {
+      document.querySelector(".section__img-cover__dot").style.opacity =
+      (document.querySelector(".section__img-cover__dot").style.opacity == 0.3) ? 1 : 0.3;
+    }, 1000);
+  }
 }
 
 // change avatar in popup
@@ -114,22 +128,6 @@
   };
 }
 
-// popup animation
-function popupVisibleAnimation(container, popup) {
-  container.style.visibility = "visible";
-  popup.style.left = "50%";
-  popup.style.opacity = "1";
-  document.querySelector("body").style.overflow = "hidden";
-}
-function popupHiddenAnimation(container, popup) {
-  popup.style.left = "-100%";
-  popup.style.opacity = "0";
-  // delay for disappear pop-up animation before hiding container
-  setTimeout(() => {
-    container.style.visibility = "hidden";
-    document.querySelector("body").style.overflow = "auto";
-  }, 500);
-}
 
 // scroll effect
 {
@@ -146,7 +144,7 @@ function popupHiddenAnimation(container, popup) {
     const zHeight = 0.4;
     const navs = document.querySelectorAll(".navigator__menu__text");
     const anchorNavs = document.querySelectorAll(".navigator__menu__text--anchor");
-
+    
     for (let page = 0; page < pages.length; page++) {
       // y = (1-x)/(1-z) | x = ratio (0 to 1) between current scroll position and height of element | z = ratio (0 to 1) between scroll position that starting to be blurry and height of element
       pages[page].style.opacity = (1 - (1.0 * (newScroll - pages[page].offsetTop) / pages[page].offsetHeight)) / (1 - zHeight);
@@ -160,7 +158,7 @@ function popupHiddenAnimation(container, popup) {
         anchorNavs[page].classList.remove("navigator__menu__text--active");
       }
     }
-
+    
     if (isScrolling == false) {
       for (let page = 0; page < pages.length; page++) {
         if ((newScroll - oldScroll) > 0) {
@@ -209,4 +207,30 @@ function popupHiddenAnimation(container, popup) {
     navIcon.style.transform = statusNav == true ? "rotate(0.25turn)" : "rotate(0turn)";
     navMenu.style.maxHeight = statusNav == true ? "200px" : "0px";
   });
+}
+
+
+// popup animation
+function popupVisibleAnimation(container, popup) {
+  container.style.visibility = "visible";
+  popup.style.left = "50%";
+  popup.style.opacity = "1";
+  document.querySelector("body").style.overflow = "hidden";
+  setTimeout(() => {
+    window.addEventListener("click", closePopupRef = event => closePopup(event, container, popup));
+  }, 100);
+}
+function popupHiddenAnimation(container, popup) {
+  popup.style.left = "-100%";
+  popup.style.opacity = "0";
+  window.removeEventListener("click", closePopupRef);
+  // delay for disappear pop-up animation before hiding container
+  setTimeout(() => {
+    container.style.visibility = "hidden";
+    document.querySelector("body").style.overflow = "auto";
+  }, 500);
+}
+// click outside to close popup
+function closePopup(event, container, popup) {
+  (popup.style.opacity == 1) && !popup.contains(event.target) && popupHiddenAnimation(container, popup);
 }
